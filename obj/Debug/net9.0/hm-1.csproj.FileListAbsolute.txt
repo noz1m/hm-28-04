@@ -17,3 +17,4 @@
 /Users/nozimjonqozievgmail.com/Desktop/adotnet/homework/hm-1/obj/Debug/net9.0/hm-1.pdb
 /Users/nozimjonqozievgmail.com/Desktop/adotnet/homework/hm-1/obj/Debug/net9.0/hm-1.genruntimeconfig.cache
 /Users/nozimjonqozievgmail.com/Desktop/adotnet/homework/hm-1/obj/Debug/net9.0/ref/hm-1.dll
+/Users/nozimjonqozievgmail.com/Desktop/adotnet/homework/hm-1/obj/Debug/net9.0/hm-1.sourcelink.json

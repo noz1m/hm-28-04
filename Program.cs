@@ -1,11 +1,11 @@
-﻿// using Npgsql;
+﻿using Npgsql;
 
-// var connectionString = "Server=localhost;Database=hm-28-04;Port=5433; User Id=postgres;Password=nozimjanov";
+var connectionString = "Server=localhost;Database=hm-28-04;Port=5433; User Id=postgres;Password=nozimjanov";
 
-// using (var connection = new NpgsqlConnection(connectionString))
-// {
-//     connection.Open();
-// }
+using (var connection = new NpgsqlConnection(connectionString))
+{
+    connection.Open();
+}
 
 // using (var connection = new NpgsqlConnection(connectionString))
 // {
@@ -79,8 +79,8 @@
 //     System.Console.WriteLine($"Updated {result1} records");
 
 //     var cmd2 = @"update students 
-//                 set name = 'Nozim'
-//                 where name = 'Nozimjon' ";
+//                 set name = 'Nozimjon'
+//                 where name = 'Nozim' ";
 //     var command2 = new NpgsqlCommand(cmd2, connection);
 //     var result2 = command2.ExecuteNonQuery();
 //     System.Console.WriteLine($"Updated {result2} records");
@@ -90,4 +90,24 @@
 //     var command3 = new NpgsqlCommand(cmd3, connection);
 //     var result3 = command3.ExecuteNonQuery();
 //     System.Console.WriteLine($"Deleted {result3} records");
-// }
+// }  
+
+string newDatabaseName = "neon";
+
+try 
+{
+    using (var connection = new NpgsqlConnection(connectionString))
+    {
+        connection.Open();
+            using (var command = new NpgsqlCommand($"create database {newDatabaseName}", connection))
+        {
+            command.ExecuteNonQuery();
+            Console.WriteLine($"База данных {newDatabaseName} успешно создана.");
+        }
+    }
+}
+
+catch (Exception ex)
+{
+    Console.WriteLine($"Ошибка при создании базы данных: {ex.Message}");
+}
